@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convy convertor</title>
+    <link rel="stylesheet" href="./css/konvertor.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+<body>
+    <h2>Welcome to Convy</h2>
+    <div class="box">
+        <div class="formbox">
+         <form id="forma">
+            <div id="div1" class="formaDivovi"><label for="iznos">Amount</label>
+                <input type="number" id="iznos" name="iznos">
+           </div>
+            <div id="div2" class="formaDivovi"><label  for="valuta1">From</label>
+                <select name="valuta1" id="valuta1">
+                    <option value="EUR"> Evro </option>
+                    <option value="CAD"> Kanadski dolar </option>
+                    <option value="HKD"> Hongkonški dolar </option>
+                    <option value="ISK"> Islandska kruna </option>
+                    <option value="PHP"> Filipinski pezos </option>
+                    <option value="DKK"> Danska kruna </option>
+                    <option value="HUF"> Mađarska kruna </option>
+                    <option value="CZK"> Češka kruna </option>
+                    <option value="AUD"> Australijski dolar </option>
+                    <option value="RON"> Rumunski lej </option>
+                    <option value="SEK"> Švedska kruna </option>
+                    <option value="IDR"> Indonežanska rupija </option>
+                    <option value="INR"> Indijska rupija </option>
+                    <option value="BRL"> Brazilski real </option>
+                    <option value="RUB"> Ruska rublja </option>
+                    <option value="HRK"> Hrvatska kuna </option>
+                    <option value="JPY"> Japanski jen </option>
+                    <option value="THB"> Tajlandski bat </option>
+                    <option value="CHF"> Švajcarski franak </option>
+                    <option value="SGD"> Singapurski dolar </option>
+                    <option value="PLN"> Poljski zlot </option>
+                    <option value="BGN"> Bugarski lev </option>
+                    <option value="TRY"> Turska lira </option>
+                    <option value="CNY"> Ženminbi </option>
+                    <option value="NOK"> Norveška kruna </option>
+                    <option value="NZD"> Novozelandski dolar </option>
+                    <option value="ZAR"> Južnoafrički rand</option>
+                    <option value="USD"> Američki dolar </option>
+                    <option value="MXN"> Meksički pezos </option>
+                    <option value="ILS"> Novo izraelski šekel </option>
+                    <option value="GBP"> Britanska funta </option>
+                    <option value="KRW"> Južnokorejski von </option>
+                    <option value="MYR"> Malezijski ringit </option>
+                </select></div> 
+           <div id="div3" class="formaDivovi">
+            <label for="valuta2" >To</label>
+            <select name="valuta2" id="valuta2">
+                <option value="CAD"> Kanadski dolar </option>
+                <option value="HKD"> Hongkonški dolar </option>
+                <option value="ISK"> Islandska kruna </option>
+                <option value="PHP"> Filipinski pezos </option>
+                <option value="DKK"> Danska kruna </option>
+                <option value="HUF"> Mađarska kruna </option>
+                <option value="CZK"> Češka kruna </option>
+                <option value="AUD"> Australijski dolar </option>
+                <option value="RON"> Rumunski lej </option>
+                <option value="SEK"> Švedska kruna </option>
+                <option value="IDR"> Indonežanska rupija </option>
+                <option value="INR"> Indijska rupija </option>
+                <option value="BRL"> Brazilski real </option>
+                <option value="RUB"> Ruska rublja </option>
+                <option value="HRK"> Hrvatska kuna </option>
+                <option value="JPY"> Japanski jen </option>
+                <option value="THB"> Tajlandski bat </option>
+                <option value="CHF"> Švajcarski franak </option>
+                <option value="SGD"> Singapurski dolar </option>
+                <option value="PLN"> Poljski zlot </option>
+                <option value="BGN"> Bugarski lev </option>
+                <option value="TRY"> Turska lira </option>
+                <option value="CNY"> Ženminbi </option>
+                <option value="NOK"> Norveška kruna </option>
+                <option value="NZD"> Novozelandski dolar </option>
+                <option value="ZAR"> Južnoafrički rand</option>
+                <option value="USD"> Američki dolar </option>
+                <option value="MXN"> Meksički pezos </option>
+                <option value="ILS"> Novo izraelski šekel </option>
+                <option value="GBP"> Britanska funta </option>
+                <option value="KRW"> Južnokorejski von </option>
+                <option value="MYR"> Malezijski ringit </option>
+                <option value="EUR"> Evro </option>
+            </select> 
+           </div>
+            <div id="div4" class="formaDivovi" class="ivica">
+            <i id="ikonica" class="fas fa-exchange-alt" ></i>
+           </div>
+          <div id="div5" class="formaDivovi"> <p id="rezultat" name="rezultat" ></p></div>
+        </form>
+        </div>
+    </div>
+    
+    <script src="./js/konvertor.js"></script>
+
+</body>
+</html>

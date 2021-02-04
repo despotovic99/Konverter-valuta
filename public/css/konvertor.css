@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    
+    overflow-x: hidden; 
+    
+}
+body{
+    width: 100%;
+    height: 90vh; 
+    background-image: url("../img/2920342.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    
+}
+h2{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30pt;
+    color: #00f4fc;
+}
+.box{
+    flex-wrap: wrap;
+    width: 70vw;
+    height: 70vh;
+    margin-top: 80px;
+    margin-left: 15vw;
+    
+    background-color: rgb(1, 41, 102, 0.6);
+    box-shadow: 20px 20px 50px 15px #5efbff;
+}
+
+.formbox{
+    width: 100%;
+    height: 100%;
+}
+
+#forma{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    
+    justify-items: center;
+}
+
+.formaDivovi{
+
+    width: 75%;
+    margin-bottom: 10px;
+    
+}
+
+#div1,#div2,#div3{
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-items: start;
+    align-items: center;
+
+}
+
+#div4, #div5{
+
+    display: grid;
+    justify-items: center;
+    
+}
+    
+
+label{
+    line-height: 80px;
+    font-size: 30pt;
+    color: white;
+    margin-right: 20px;
+
+}
+input[type=number]{
+    width: 30vw;
+    background-color: rgb(12, 31, 89, 0.8);
+    border: 0.5px groove #0c1f59;
+    border-radius: 8px;
+    font-size: 20pt;
+    color: white;
+    margin-right: 15px;
+    
+    
+}
+
+
+input[type=number]:hover{
+    background-color:rgb(1, 41, 102, 0.6);
+}
+
+select{
+    width: 200px;
+    height: 30px;
+    
+}
+
+.ivica{
+    
+    border: 2px groove #5efbff ;
+    border-radius: 30px;
+}
+
+.ivica i{
+    cursor: pointer;
+}
+
+#ikonica{
+    color: #00f4fc; font-size: 50pt;
+}
+
+#rezultat{
+    flex-wrap:wrap;
+    width: 30vw;
+    height: 35px;
+    background-color: rgb(12, 31, 89, 0.8);
+    border: 0.5px groove #0c1f59;
+    border-radius: 8px;
+    font-size: 20pt;
+    color: white;
+}
+
+
+
+@media all and (max-width: 600px) {
+    
+    #div1,#div2,#div3{
+        padding-top: 10%;
+        display: grid;
+        grid-template-columns: 0;
+        grid-template-rows: 1fr 1fr;
+        justify-items: start;
+        align-items: center;
+    
+    }
+
+    .formaDivovi{
+
+        height: 20%;
+        margin-bottom: 5px;
+        
+    }
+
+    label{
+        line-height: 30px;
+        font-size: 15pt;
+        color: white;
+        margin-right: 20px;
+    
+    }
+
+    select{
+        width: 150px;
+       
+    }
+    
+
+}

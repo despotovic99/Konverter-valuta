@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width: 100%;
+   height: 100%;
+    margin: 0;
+    padding: 0; 
+    overflow-x: hidden;
+}
+body{
+        background-image: url("../img/17455.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+h1{
+flex-wrap: wrap;
+    font-size: 48pt;
+    text-align: center;
+    color: white;
+    position: absolute;
+    padding-left: 43.5%;
+    padding-top: 30px;
+
+}
+h2{
+flex-wrap: wrap;
+    font-size: 22pt;
+    color:#b0dfe5;
+    text-align: center;
+    position: absolute;
+    padding-top: 128px;
+    padding-left: 33%;
+}
+button{
+flex-wrap: wrap;
+    color:#31bacc;
+    font-size: 30pt;
+    background-color: white;
+    border: solid blue;
+    border-radius: 8px;
+    text-align: center;
+    position: absolute;
+    padding: 2px 5px 2px 5px;
+}
+.dugme{
+    padding-left: 47%;
+    padding-top: 250px;
+}
+button:hover{
+    background-color:#111e6c;
+}
+@media all and (max-width: 570px) {
+
+    h1 {
+        font-size: 30pt;
+        justify-content: center;
+       align-content: center;
+       justify-items: center;
+       align-items: center;
+        padding-left: 30%;
+        padding-top: 5px;
+    }
+    h2{
+        font-size: 18pt;
+        justify-content: center;
+       align-content: center;
+       justify-items: center;
+       align-items: center;
+        padding-left: 0;
+    }
+    button{
+        position: sticky;
+        justify-content: center;
+       align-content: center;
+       justify-items: center;
+       align-items: center;
+        position: relative;
+        padding-left: 0;
+    }
+}
