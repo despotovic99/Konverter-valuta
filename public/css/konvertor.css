@@ -9,7 +9,7 @@ html{
 }
 body{
     width: 100%;
-    height: 90vh; 
+    height: 100%; 
     background-image: url("../img/2920342.jpg");
     background-size: cover;
     background-position: center;
@@ -24,14 +24,21 @@ h2{
     color: #00f4fc;
 }
 .box{
-    flex-wrap: wrap;
-    width: 70vw;
-    height: 70vh;
+    /*flex-wrap: wrap;*/
+    width: 80vw;
+    height: 80%;
     margin-top: 80px;
-    margin-left: 15vw;
-    
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+
     background-color: rgb(1, 41, 102, 0.6);
     box-shadow: 20px 20px 50px 15px #5efbff;
+
+    display: grid;
+    grid-template-columns: 3fr 1.25fr;
+    justify-items: start;
+    align-items: center;
 }
 
 .formbox{
@@ -39,13 +46,57 @@ h2{
     height: 100%;
 }
 
+.kursbox{
+
+    width: 100%;
+    height: 40%;
+    
+   
+  
+}
+
+.kursboxelements{
+    width: 90%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr 2fr;
+    justify-items: start;
+   
+}
+
+.kursel{
+    
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+
+    border: outset;
+    border-color: #586cec;
+    border-width: 5px;
+    border-radius: 25px;
+}
+#kursNaslov{
+    grid-template-columns: 1fr;
+    
+}
+
+.kursel p{
+
+    border-bottom: groove;
+    border-color: #0c1f59;
+}
+
+
+
 #forma{
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    
     justify-items: center;
+
 }
 
 .formaDivovi{
@@ -64,29 +115,44 @@ h2{
 
 }
 
-#div4, #div5{
+#div1 div{
+
+    display: flex;
+    align-items: center;
+
+}
+
+#div4{
 
     display: grid;
     justify-items: center;
-    
+  
 }
+
+#div5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
     
 
 label{
     line-height: 80px;
-    font-size: 30pt;
+    font-size: 20pt;
     color: white;
     margin-right: 20px;
 
 }
 input[type=number]{
-    width: 30vw;
+    width: 100%;
     background-color: rgb(12, 31, 89, 0.8);
     border: 0.5px groove #0c1f59;
     border-radius: 8px;
     font-size: 20pt;
     color: white;
-    margin-right: 15px;
+    margin-right: 5px;
     
     
 }
@@ -97,7 +163,7 @@ input[type=number]:hover{
 }
 
 select{
-    width: 200px;
+    width: 70%;
     height: 30px;
     
 }
@@ -118,48 +184,73 @@ select{
 
 #rezultat{
     flex-wrap:wrap;
-    width: 30vw;
+    width: 100%;
     height: 35px;
     background-color: rgb(12, 31, 89, 0.8);
     border: 0.5px groove #0c1f59;
     border-radius: 8px;
     font-size: 20pt;
     color: white;
+    margin-right: 5px;
+}
+
+#kursNaslov{
+    text-align: center;
 }
 
 
-
-@media all and (max-width: 600px) {
+@media all and (max-width: 700px) {
     
-    #div1,#div2,#div3{
-        padding-top: 10%;
-        display: grid;
-        grid-template-columns: 0;
-        grid-template-rows: 1fr 1fr;
-        justify-items: start;
-        align-items: center;
-    
-    }
-
-    .formaDivovi{
-
-        height: 20%;
-        margin-bottom: 5px;
+    .box{
+        grid-template-columns: 0fr;
+        grid-template-rows: 0.3fr 0.1fr;
         
+        align-items: center;
+        justify-items: center;
+        
+
+        width: 90vw;
+        height: 90%;
     }
 
-    label{
-        line-height: 30px;
-        font-size: 15pt;
-        color: white;
-        margin-right: 20px;
-    
+    .formbox{
+        width: 85vw;
+        height: 50%;
+        margin-top: -170px;
+        margin-bottom: 50px;
     }
 
-    select{
-        width: 150px;
-       
+    .kursbox{
+    width: 85vw;
+        height: 50%;
+        margin-bottom: 20px;
+        
+      
     }
+
+    #div1,#div2,#div3{
+
+        grid-template-columns: 0;
+        grid-template-rows: 0.5fr 0.5fr;
+
+        /*width: 84vw;*/
+    } 
+
+    input[type=number]{
+        width: 65vw;
+    }
+
+
+select{
+    width: 70vw;
+}
+
+.kursboxelements{
+    width: 65%;
+    height: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
     
 
 }

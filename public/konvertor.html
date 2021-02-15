@@ -13,7 +13,7 @@
         <div class="formbox">
          <form id="forma">
             <div id="div1" class="formaDivovi"><label for="iznos">Amount</label>
-                <input type="number" id="iznos" name="iznos">
+               <div> <input type="number" id="iznos" name="iznos"> <p id="iznosValutaText1">EUR</p></div>
            </div>
             <div id="div2" class="formaDivovi"><label  for="valuta1">From</label>
                 <select name="valuta1" id="valuta1">
@@ -92,9 +92,19 @@
             <div id="div4" class="formaDivovi" class="ivica">
             <i id="ikonica" class="fas fa-exchange-alt" ></i>
            </div>
-          <div id="div5" class="formaDivovi"> <p id="rezultat" name="rezultat" ></p></div>
+          <div id="div5" class="formaDivovi"> <p id="rezultat" name="rezultat" ></p><p id="iznosValutaText1">EUR</p></div>
         </form>
         </div>
+
+        <div class="kursbox"> 
+            <div class="kursboxelements">
+               <div class="kursel" id="kursNaslov"><p>Kurs - datum poslednje promene</p><p id="datumPoslednjePromene">2021-02-15</p></div> 
+                <div class="kursel" id="kursel1"> <p class="kurselp" id="bazaS">EUR</p> <p id="bazaBr"></p></div>
+               <div class="kursel" id="kursel2"> <p class="kurselp" id="drugaS">USD</p> <p id="drugaBr"></p></div>
+               <div class="kursel" id="kursel3"> <p class="kurselp" id="treciS">CHF</p> <p id="treciBr"></p></div>
+            </div>
+        </div>
+        
     </div>
     
     <script src="./js/konvertor.js"></script>
