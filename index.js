@@ -25,7 +25,7 @@ app.get("/konvertor",(zahtev,odgovor)=>{
 
 });
 
-app.get("/kurs",(zahtev,odgovor)=>{
+app.get("/pocetneVrednosti",(zahtev,odgovor)=>{
 
 
     poslednjiPodaci((greska,{vrednosti,baza,datum}={})=>{

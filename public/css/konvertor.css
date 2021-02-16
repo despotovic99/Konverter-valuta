@@ -15,7 +15,8 @@ body{
     background-position: center;
     margin: 0;
     padding: 0;
-    
+    font-family: Arial, Helvetica, sans-serif;
+    color:#54e1ec;
 }
 h2{
     margin-top: 20px;
@@ -61,9 +62,8 @@ h2{
     display: grid;
     grid-template-rows: 1fr 2fr 2fr 2fr;
     justify-items: start;
-   
+    font-size: 0.8em;
 }
-
 .kursel{
     
     width: 95%;
@@ -73,21 +73,28 @@ h2{
     align-items: center;
 
     border: outset;
-    border-color: #586cec;
+  /*  border-color: #586cec;*/
+  border-color:#3c74bc;
     border-width: 5px;
-    border-radius: 25px;
-}
-#kursNaslov{
-    grid-template-columns: 1fr;
-    
-}
+    border-radius: 20px;
 
+    background-color:#0c2560;
+}
 .kursel p{
 
     border-bottom: groove;
-    border-color: #0c1f59;
+  /* border-color: #0c1f59;*/
+  border-color:#54e1ec;
 }
 
+#kursNaslovParagarf{
+    border: none;
+}
+
+#kursNaslov{
+    grid-template-columns: 1fr;
+   
+}
 
 
 #forma{
@@ -141,7 +148,7 @@ h2{
 label{
     line-height: 80px;
     font-size: 20pt;
-    color: white;
+   /* color: white;*/
     margin-right: 20px;
 
 }

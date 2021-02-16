@@ -2,6 +2,17 @@
 let ikonica = document.getElementById("ikonica");
 ikonica.addEventListener("click",getAmount);
 
+let baza=getOption().valuta1.value;
+let valuteVrednosti;
+let bazaVrednost;
+let drugaValuta = getOption().valuta2.value;
+let datumPP;
+
+
+posaljiZahtevZaVrednosti();
+
+
+
 
 function getAmount(){
 
@@ -15,125 +26,22 @@ function getAmount(){
 
     let iznosBroj = parseFloat(iznos);
 
-    let opcije = getOption();
-  //  console.log(opcije.valuta1.text+"  druga "+opcije.valuta2.text);
-
-    let baza = opcije.valuta1.value;
-    let valuteVrednosti;
-    let bazaVrednost;
-
-    fetch(`/kurs${baza}`).then(odgovor=>{
-        odgovor.json().then(podaci=>{
-            if(podaci.error){
-                
-                alert("Greska prilikom dobijanja vrednosti kursa!");
     
-            }else{
-                bazaVrednost=podaci.baza;
-                valuteVrednosti=podaci.vrednosti;
-                console.log(valuteVrednosti);
 
-                let kurs=String(opcije.valuta2.value);
-                
-                
-                
-                console.log(iznosBroj);
-
-                let kursBroj;
-
-                switch(kurs){
-
-                    case "EUR": kursBroj=valuteVrednosti.EUR;
-                    break;
-                    case "CAD": kursBroj=valuteVrednosti.CAD;
-                    break;
-                    case "HKD": kursBroj=valuteVrednosti.HKD;
-                    break;
-                    case "ISK": kursBroj=valuteVrednosti.ISK;
-                    break;
-                    case "PHP": kursBroj=valuteVrednosti.PHP;
-                    break;
-                    case "DKK": kursBroj=valuteVrednosti.DKK;
-                    break;
-                    case "HUF": kursBroj=valuteVrednosti.HUF;
-                    break;
-                    case "CZK": kursBroj=valuteVrednosti.CZK;
-                    break;
-                    case "AUD": kursBroj=valuteVrednosti.AUD;
-                    break;
-                    case "RON": kursBroj=valuteVrednosti.RON;
-                    break;
-                    case "SEK": kursBroj=valuteVrednosti.SEK;
-                    break;
-                    case "IDR": kursBroj=valuteVrednosti.IDR;
-                    break;
-                    case "INR": kursBroj=valuteVrednosti.INR;
-                    break;
-                    case "BRL": kursBroj=valuteVrednosti.BRL;
-                    break;
-                    case "RUB": kursBroj=valuteVrednosti.RUB;
-                    break;
-                    case "HRK": kursBroj=valuteVrednosti.HRK;    
-                    break;
-                    case "JPY": kursBroj=valuteVrednosti.JPY;
-                    break;
-                    case "THB": kursBroj=valuteVrednosti.THB;
-                    break;
-                    case "CHF": kursBroj=valuteVrednosti.CHF;
-                    break;
-                    case "SGD": kursBroj=valuteVrednosti.SGD;
-                    break;
-                    case "PLN": kursBroj=valuteVrednosti.PLN;
-                    break;
-                    case "BGN": kursBroj=valuteVrednosti.BGN;
-                    break;
-                    case "TRY": kursBroj=valuteVrednosti.TRY;
-                    break;
-                    case "CNY": kursBroj=valuteVrednosti.CNY;
-                    break;
-                    case "NOK": kursBroj=valuteVrednosti.NOK;
-                    break;
-                    case "NZD": kursBroj=valuteVrednosti.NZD;
-                    break;
-                    case "ZAR": kursBroj=valuteVrednosti.ZAR;
-                    break;
-                    case "USD": kursBroj=valuteVrednosti.USD;
-                    break;
-                    case "MXN": kursBroj=valuteVrednosti.MXN;
-                    break;
-                    case "ILS": kursBroj=valuteVrednosti.ILS;
-                    break;
-                    case "GBP": kursBroj=valuteVrednosti.GBP;
-                    break;
-                    case "KRW": kursBroj=valuteVrednosti.KRW;
-                    break;
-                    case "MYR": kursBroj=valuteVrednosti.MYR;
-                    break;
-                    
-                }
-
-                if(baza==kurs){
-                    kursBroj=1;
-                }
-
-                console.log(kursBroj);
-
-                let rez = iznosBroj*kursBroj;
-                document.getElementById("rezultat").innerText=rez.toFixed(2);
-               
-
-            }
-        });
-
-        
-        });
+        let kursBroj=vratiKursValute(drugaValuta,valuteVrednosti);
+        if(baza==drugaValuta){
+            kursBroj=1;
+        }
 
 
 
+        console.log(kursBroj);
+
+        let rez = iznosBroj*kursBroj;
+        document.getElementById("rezultat").innerText=rez.toFixed(2);
 
 }
 
-//ikonica.addEventListener("click",getOption);
 
 function getOption(){
 
@@ -154,4 +62,144 @@ function getOption(){
 
 }
 
+function promeniValutu1(meni){
 
+       document.getElementById("iznosValutaText1").innerHTML=meni.value;
+
+       baza=getOption().valuta1.value;
+
+       posaljiZahtevZaVrednosti();
+
+ 
+}
+
+function promeniValutu2(meni){
+
+    document.getElementById("iznosValutaText2").innerHTML=meni.value;
+
+    drugaValuta=getOption().valuta2.value;
+
+    popuniTabelu();
+ 
+}
+
+   
+
+
+
+function vratiKursValute(kurs,valuteVrednosti){
+
+    let kursBroj;
+
+    switch(kurs){
+
+        case "EUR": kursBroj=valuteVrednosti.EUR;
+        break;
+        case "CAD": kursBroj=valuteVrednosti.CAD;
+        break;
+        case "HKD": kursBroj=valuteVrednosti.HKD;
+        break;
+        case "ISK": kursBroj=valuteVrednosti.ISK;
+        break;
+        case "PHP": kursBroj=valuteVrednosti.PHP;
+        break;
+        case "DKK": kursBroj=valuteVrednosti.DKK;
+        break;
+        case "HUF": kursBroj=valuteVrednosti.HUF;
+        break;
+        case "CZK": kursBroj=valuteVrednosti.CZK;
+        break;
+        case "AUD": kursBroj=valuteVrednosti.AUD;
+        break;
+        case "RON": kursBroj=valuteVrednosti.RON;
+        break;
+        case "SEK": kursBroj=valuteVrednosti.SEK;
+        break;
+        case "IDR": kursBroj=valuteVrednosti.IDR;
+        break;
+        case "INR": kursBroj=valuteVrednosti.INR;
+        break;
+        case "BRL": kursBroj=valuteVrednosti.BRL;
+        break;
+        case "RUB": kursBroj=valuteVrednosti.RUB;
+        break;
+        case "HRK": kursBroj=valuteVrednosti.HRK;    
+        break;
+        case "JPY": kursBroj=valuteVrednosti.JPY;
+        break;
+        case "THB": kursBroj=valuteVrednosti.THB;
+        break;
+        case "CHF": kursBroj=valuteVrednosti.CHF;
+        break;
+        case "SGD": kursBroj=valuteVrednosti.SGD;
+        break;
+        case "PLN": kursBroj=valuteVrednosti.PLN;
+        break;
+        case "BGN": kursBroj=valuteVrednosti.BGN;
+        break;
+        case "TRY": kursBroj=valuteVrednosti.TRY;
+        break;
+        case "CNY": kursBroj=valuteVrednosti.CNY;
+        break;
+        case "NOK": kursBroj=valuteVrednosti.NOK;
+        break;
+        case "NZD": kursBroj=valuteVrednosti.NZD;
+        break;
+        case "ZAR": kursBroj=valuteVrednosti.ZAR;
+        break;
+        case "USD": kursBroj=valuteVrednosti.USD;
+        break;
+        case "MXN": kursBroj=valuteVrednosti.MXN;
+        break;
+        case "ILS": kursBroj=valuteVrednosti.ILS;
+        break;
+        case "GBP": kursBroj=valuteVrednosti.GBP;
+        break;
+        case "KRW": kursBroj=valuteVrednosti.KRW;
+        break;
+        case "MYR": kursBroj=valuteVrednosti.MYR;
+        break;
+        
+    }
+
+    return kursBroj;
+}
+
+function popuniTabelu(){
+
+    document.getElementById("datumPoslednjePromene").innerHTML=datumPP;
+
+    document.getElementById("prviS").innerHTML="USD";
+    document.getElementById("prviBr").innerHTML=valuteVrednosti.USD;
+    
+    document.getElementById("drugiS").innerHTML="CHF";
+    document.getElementById("drugiBr").innerHTML=valuteVrednosti.CHF;
+    
+    document.getElementById("treciS").innerHTML=drugaValuta;
+    document.getElementById("treciBr").innerHTML=vratiKursValute(drugaValuta,valuteVrednosti);
+
+}
+
+function posaljiZahtevZaVrednosti(){
+
+    fetch(`/kurs${baza}`).then(odgovor=>{
+        odgovor.json().then(podaci=>{
+            if(podaci.error){
+                
+                alert("Greska prilikom dobijanja vrednosti kursa!");
+    
+            }else{
+                bazaVrednost=podaci.baza;
+                valuteVrednosti=podaci.vrednosti;
+                datumPP=podaci.datum;
+    
+                popuniTabelu();
+             
+            }
+        });
+    
+        
+        
+    });
+
+}
