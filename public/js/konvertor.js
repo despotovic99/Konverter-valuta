@@ -169,11 +169,21 @@ function popuniTabelu(){
 
     document.getElementById("datumPoslednjePromene").innerHTML=datumPP;
 
+    if(baza=="USD" || drugaValuta=="USD"){
+        document.getElementById("prviS").innerHTML="";
+        document.getElementById("prviBr").innerHTML="";
+    }else{
     document.getElementById("prviS").innerHTML="USD";
     document.getElementById("prviBr").innerHTML=valuteVrednosti.USD;
+    }
     
+    if(baza=="CHF" || drugaValuta=="CHF"){
+        document.getElementById("drugiS").innerHTML="";
+        document.getElementById("drugiBr").innerHTML="";
+    }else{
     document.getElementById("drugiS").innerHTML="CHF";
-    document.getElementById("drugiBr").innerHTML=valuteVrednosti.CHF;
+    document.getElementById("drugiBr").innerHTML=vratiKursValute("CHF",valuteVrednosti);
+    }
     
     document.getElementById("treciS").innerHTML=drugaValuta;
     document.getElementById("treciBr").innerHTML=vratiKursValute(drugaValuta,valuteVrednosti);
