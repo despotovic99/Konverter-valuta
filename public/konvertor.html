@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convy convertor</title>
+    <title>Convy konvertor</title>
     <link rel="stylesheet" href="./css/konvertor.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="icon" href="./img/ikonica.png" type="image/icon type">
 </head>
 <body>
-    <h2>Welcome to Convy</h2>
+    <h2>Dobrodošli u Convy</h2>
     <div class="box">
         <div class="formbox">
          <form id="forma">
-            <div id="div1" class="formaDivovi"><label for="iznos">Amount</label>
+            <div id="div1" class="formaDivovi"><label for="iznos">Iznos</label>
                <div> <input type="number" id="iznos" name="iznos"> <p id="iznosValutaText1">EUR</p></div>
            </div>
-            <div id="div2" class="formaDivovi"><label  for="valuta1">From</label>
+            <div id="div2" class="formaDivovi"><label  for="valuta1">Iz</label>
                 <select onchange="promeniValutu1(this)" name="valuta1" id="valuta1">
                     <option value="EUR"> Evro </option>
                     <option value="CAD"> Kanadski dolar </option>
@@ -52,7 +53,7 @@
                     <option value="MYR"> Malezijski ringit </option>
                 </select></div> 
            <div id="div3" class="formaDivovi">
-            <label for="valuta2" >To</label>
+            <label for="valuta2" >U</label>
             <select onchange="promeniValutu2(this)" name="valuta2" id="valuta2">
                 <option value="CAD"> Kanadski dolar </option>
                 <option value="HKD"> Hongkonški dolar </option>
